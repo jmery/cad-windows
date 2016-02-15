@@ -1,0 +1,38 @@
+---
+driver:
+  name: ec2
+  aws_ssh_key_id: cad_demo_east
+  region: us-east-1
+  availability_zone: us-east-1a
+  security_group_ids: sg-e5bafc83
+  associate_public_ip: true
+  subnet_id: subnet-977469ce
+  instance_type: c3.large
+  retryable_tries: 120
+  retryable_sleep: 5
+  tags:
+    # Replace YOURNAME and YOURCOMPANY here
+    Name: "CAD Demo Kitchen Instance"
+    created-by: "test-kitchen"
+    user: <%= ENV['USER'] %>
+
+provisioner:
+  name: chef_zero
+  client_rb:
+    audit_mode: :enabled
+  cookbook_path: C:\Users\chef\chef-demo\cookbooks
+
+platforms:
+  - name: windows-2012r2
+    driver_config:
+      image_id: ami-ca82c4a0
+    transport:
+      username: Administrator
+      password: Cod3Can!
+      ssh_key: C:\Users\chef\.ssh\cad_demo_east.pem
+
+suites:
+  - name: default
+    run_list:
+      - recipe[sitedbaas-windows::default]
+    attributes:
