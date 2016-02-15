@@ -7,12 +7,11 @@ driver:
   security_group_ids: sg-e5bafc83
   associate_public_ip: true
   subnet_id: subnet-977469ce
-  instance_type: c3.large
+  instance_type: c3.xlarge
   retryable_tries: 120
   retryable_sleep: 5
   tags:
-    # Replace YOURNAME and YOURCOMPANY here
-    Name: "CAD Demo Kitchen Instance"
+    Name: "CAD Demo Kitchen Windows Instance"
     created-by: "test-kitchen"
     user: <%= ENV['USER'] %>
 
