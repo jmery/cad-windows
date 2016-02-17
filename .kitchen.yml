@@ -7,7 +7,7 @@ driver:
   security_group_ids: sg-e5bafc83
   associate_public_ip: true
   subnet_id: subnet-977469ce
-  instance_type: c3.xlarge
+  instance_type: m3.large
   retryable_tries: 120
   retryable_sleep: 5
   tags:
