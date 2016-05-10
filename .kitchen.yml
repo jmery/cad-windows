@@ -24,7 +24,7 @@ provisioner:
 platforms:
   - name: windows-2012r2
     driver_config:
-      image_id: ami-ca82c4a0
+      image_id: ami-a5edfecf
     transport:
       username: Administrator
       password: Cod3Can!
