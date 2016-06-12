@@ -15,6 +15,9 @@ driver:
     created-by: "test-kitchen"
     user: <%= ENV['USER'] %>
 
+verifier:
+    name: inspec
+
 provisioner:
   name: chef_zero
   client_rb:
