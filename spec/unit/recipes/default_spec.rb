@@ -17,10 +17,6 @@ describe 'sitedbaas-windows::default' do
       runner.converge(described_recipe)
     end
 
-    it 'runs a powershell_script to install IIS server' do
-      expect(chef_run).to run_powershell_script('Install IIS')
-    end
-
     it 'creates a template c:\inetpub\wwwroot\Default.htm' do
       expect(chef_run).to create_template('c:\inetpub\wwwroot\Default.htm')
     end

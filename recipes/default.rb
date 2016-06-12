@@ -4,12 +4,7 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
-
-
-powershell_script 'Install IIS' do
-  action :run
-  code 'add-windowsfeature Web-Server'
-end
+include_recipe 'iis::default'
 
 template 'c:\inetpub\wwwroot\Default.htm' do
   source 'Default.htm.erb'
