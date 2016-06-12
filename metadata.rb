@@ -5,4 +5,6 @@ license 'all_rights'
 description 'Installs/Configures sitedbaas-windows'
 long_description 'Installs/Configures sitedbaas-windows'
 version '0.1.20'
+
+depends 'iis', '~> 4'
 depends 'windows'
