@@ -6,5 +6,5 @@ description 'Installs/Configures sitedbaas-windows'
 long_description 'Installs/Configures sitedbaas-windows'
 version '0.1.25'
 
-depends 'iis', '~> 4'
+depends 'iis', '~> 4.0.0'
 depends 'windows'
