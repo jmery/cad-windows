@@ -34,7 +34,26 @@ platforms:
       ssh_key: C:\Users\chef\.ssh\cad_demo_east.pem
 
 suites:
-  - name: default
+  # before you are able to use the compliance plugin, you need to run
+  # insecure is only required if you use self-signed certificates
+  # $ inspec compliance login https://compliance.test --user admin --insecure --token ''
+  - name: contain_inspec
     run_list:
-      - recipe[sitedbaas-windows::default]
-    attributes:
+      - recipe[sitedbaas-windows]
+    verifier:
+      inspec_tests:
+        - https://github.com/fraserpol/windowscompliance
+
+#  - name: compliance
+ #   run_list:
+  #    - recipe[sitedbaas-windows]
+   # verifier:
+    #  inspec_tests:
+     #   - https://github.com/fraserpol/complianceprofiles
+ 
+#  - name: compliance
+ #   run_list:
+  #    - recipe[sitedbaas-windows]
+   # verifier:
+    #  inspec_tests:
+     #   - compliance://admin/WindowsWebServer
