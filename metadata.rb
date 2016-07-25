@@ -4,7 +4,7 @@ maintainer_email 'chef-demos@chef.io'
 license 'all_rights'
 description 'Installs/Configures sitedbaas-windows'
 long_description 'Installs/Configures sitedbaas-windows'
-version '0.1.35'
+version '0.1.36'
 
 depends 'iis', '~> 4.1.8'
 depends 'windows'
