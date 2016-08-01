@@ -9,11 +9,11 @@ control "iis-1.0" do
   title "IIS Should be installed"
   desc "Its a web server"
 
-describe windows_feature('Web-Server') do
-  it { should be_installed }
-end
+  describe windows_feature('Web-Server') do
+    it { should be_installed }
+  end
 
-describe service('W3SVC') do
+  describe service('W3SVC') do
     it { should be_running }
     it { should be_enabled }
   end
@@ -21,6 +21,8 @@ describe service('W3SVC') do
   describe file ('c:\inetpub\wwwroot\Default.htm') do
     it { should be_file }
   end
-  
 
+  describe registry_key('Netlogon','HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Netlogon') do
+    its('Start') { should eq 2 }
+  end 
 end
